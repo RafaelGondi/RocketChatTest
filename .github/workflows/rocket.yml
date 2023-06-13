@@ -15,6 +15,6 @@ jobs:
         if: always()
         with:
           type: ${{ job.status }}
-          job_name: ':rocket: *Publish new release ${{ github.ref }}*'
+          job_name: 'Oi, pessoal, uma nova versão do Cuida foi publicada!'
           channel: '#TesteGithubActions'
           url: ${{ secrets.ROCKETCHAT_WEBHOOK }}
