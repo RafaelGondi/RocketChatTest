@@ -16,5 +16,5 @@ jobs:
         with:
           type: ${{ job.status }}
           job_name: ':rocket: *Publish new release ${{ github.ref }}*'
-          channel: '#cuida-news'
+          channel: '#TesteGithubActions'
           url: ${{ secrets.ROCKETCHAT_WEBHOOK }}
