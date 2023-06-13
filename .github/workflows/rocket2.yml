@@ -14,6 +14,7 @@ jobs:
       uses: jadolg/rocketchat-notification-action@v1.0.1
       with:
         message: Woop! Woop! A new Pull Request has being created at
+        server: ${{ secrets.ROCKETCHAT_SERVER }}
         user: ${{ secrets.ROCKETCHAT_USER }}
         password: ${{ secrets.ROCKETCHAT_PASSWORD }}
         channel: TesteGithubActions
