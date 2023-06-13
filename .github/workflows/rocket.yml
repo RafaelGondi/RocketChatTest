@@ -14,6 +14,7 @@ jobs:
         uses: RocketChat/Rocket.Chat.GitHub.Action.Notification@master
         if: always()
         with:
+          type: ${{ job.status }}
           job_name: 'Oi, pessoal, uma nova versão do Cuida foi publicada!'
           channel: '#TesteGithubActions'
           icon_emoji: 'https://framerusercontent.com/images/s79ZzWUDwmsYqL9DrfWrWIXaTHU.svg'
