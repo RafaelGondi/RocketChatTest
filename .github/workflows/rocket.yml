@@ -6,15 +6,15 @@ on:
       - main
 
 jobs:
-  test:
+  release:
+    name: Build production
     runs-on: ubuntu-latest
-    name: Test
     steps:
-      - uses: actions/checkout@v2
-      - uses: ./
+      - name: Rocket.Chat Notification
+        uses: RocketChat/Rocket.Chat.GitHub.Action.Notification@master
+        if: always()
         with:
-          message: Testando Integracao
-          ROCKET_CHAT_HOOK: ${{ secrets.ROCKET_CHAT_HOOK }}
-          ROCKET_CHAT_URL: ${{ secrets.ROCKET_CHAT_HOST }}
-          BOT_NAME: 'Cuida'
-          BOT_AVATAR: 'https://framerusercontent.com/images/s79ZzWUDwmsYqL9DrfWrWIXaTHU.svg'
+          type: ${{ job.status }}
+          job_name: ':rocket: *Publish new release ${{ github.ref }}*'
+          channel: '#develop'
+          url: ${{ secrets.ROCKETCHAT_WEBHOOK }}
