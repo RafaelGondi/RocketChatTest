@@ -17,4 +17,5 @@ jobs:
           type: ${{ job.status }}
           job_name: 'Oi, pessoal, uma nova versão do Cuida foi publicada!'
           channel: '#TesteGithubActions'
+          icon_emoji: 'https://framerusercontent.com/images/s79ZzWUDwmsYqL9DrfWrWIXaTHU.svg'
           url: ${{ secrets.ROCKETCHAT_WEBHOOK }}
