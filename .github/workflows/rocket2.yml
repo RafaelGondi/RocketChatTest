@@ -1,0 +1,20 @@
+name: "RocketChat announcer 💬"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  alert:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Push notification when a Pull Request is created
+      uses: jadolg/rocketchat-notification-action@v1.0.1
+      with:
+        message: Woop! Woop! A new Pull Request has being created at ${{ github.event.pull_request.html_url }}
+        user: ${{ secrets.ROCKETCHAT_USER }}
+        password: ${{ secrets.ROCKETCHAT_PASSWORD }}
+        channel: TesteGithubActions
+        code: false
